@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="MyGrind — premium poker session tracking, social feed, and staking deals. Track sessions, multi-currency stats, recap and variance." />
+  <meta name="description" content="MyGrind — premium poker performance: session tracking, multi-currency stats, social feed, and staking deals." />
   <title>MyGrind — Track your sessions. Own your edge.</title>
+
   <style>
     :root{
       --bg:#07080B;
@@ -15,12 +16,13 @@
       --line:rgba(255,255,255,.10);
       --shine:rgba(255,255,255,.06);
 
-      --accent:#7C5CFF;   /* luxury indigo */
-      --accent2:#2EE9A2;  /* subtle mint */
+      --accent:#7C5CFF;
+      --accent2:#2EE9A2;
       --shadow: 0 24px 60px rgba(0,0,0,.55);
       --radius: 18px;
       --max: 1120px;
     }
+
     *{ box-sizing:border-box; }
     html,body{ height:100%; }
     body{
@@ -35,7 +37,7 @@
       letter-spacing: .1px;
     }
     a{ color:inherit; text-decoration:none; }
-    .wrap{ max-width:var(--max); margin:0 auto; padding:28px 22px 64px; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:28px 22px 72px; }
 
     /* Nav */
     .nav{
@@ -45,10 +47,7 @@
       background: linear-gradient(180deg, rgba(7,8,11,.92), rgba(7,8,11,.65));
       backdrop-filter: blur(14px);
     }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight:800; letter-spacing:.4px;
-    }
+    .brand{ display:flex; align-items:center; gap:10px; font-weight:820; letter-spacing:.4px; }
     .mark{
       width:34px; height:34px; border-radius:12px;
       background:
@@ -56,8 +55,7 @@
         linear-gradient(135deg, rgba(124,92,255,1), rgba(124,92,255,.55));
       border:1px solid rgba(255,255,255,.12);
       box-shadow: 0 18px 40px rgba(124,92,255,.20);
-      position:relative;
-      overflow:hidden;
+      position:relative; overflow:hidden;
     }
     .mark:after{
       content:"";
@@ -69,6 +67,7 @@
       transform: rotate(18deg);
       opacity:.9;
     }
+
     .links{ display:flex; gap:18px; color:var(--muted); font-weight:650; }
     .links a:hover{ color:var(--text); }
     .btn{
@@ -77,7 +76,7 @@
       border:1px solid var(--line);
       background: rgba(255,255,255,.04);
       box-shadow: 0 10px 28px rgba(0,0,0,.18);
-      font-weight:750;
+      font-weight:760;
       transition: transform .12s ease;
       white-space:nowrap;
     }
@@ -86,12 +85,15 @@
       border:1px solid rgba(124,92,255,.35);
       background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(124,92,255,.55));
     }
+    .btn.ghost{
+      background: rgba(255,255,255,.02);
+    }
 
     /* Hero */
     .hero{
       display:grid; grid-template-columns: 1.1fr .9fr;
       gap:26px;
-      padding:24px 0 10px;
+      padding:26px 0 12px;
       align-items:center;
     }
     .kicker{
@@ -114,22 +116,9 @@
       line-height:1.05;
       letter-spacing:-.9px;
     }
-    .lead{
-      margin:0;
-      color:var(--muted);
-      font-size: 17px;
-      max-width: 62ch;
-    }
-    .cta{
-      display:flex; gap:12px; flex-wrap:wrap;
-      margin-top:18px;
-    }
-    .fineprint{
-      margin-top:14px;
-      color: rgba(255,255,255,.55);
-      font-size: 12px;
-      max-width: 75ch;
-    }
+    .lead{ margin:0; color:var(--muted); font-size: 17px; max-width: 62ch; }
+    .cta{ display:flex; gap:12px; flex-wrap:wrap; margin-top:18px; }
+    .fineprint{ margin-top:14px; color: rgba(255,255,255,.55); font-size: 12px; max-width: 75ch; }
 
     /* Panels */
     .card{
@@ -138,9 +127,8 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
-    .mock{
-      padding:16px;
-    }
+
+    .mock{ padding:16px; }
     .mockInner{
       border-radius: 22px;
       border: 1px solid rgba(255,255,255,.14);
@@ -152,36 +140,24 @@
       min-height: 420px;
       overflow:hidden;
     }
-    .row{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      font-weight:780;
-      color: rgba(255,255,255,.85);
-    }
+    .row{ display:flex; align-items:center; justify-content:space-between; gap:12px; font-weight:780; color: rgba(255,255,255,.85); }
     .pill{
-      font-size:12px;
-      padding:7px 10px;
-      border-radius:999px;
+      font-size:12px; padding:7px 10px; border-radius:999px;
       border:1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.04);
       color: rgba(255,255,255,.70);
       font-weight:700;
     }
-    .grid2{
-      display:grid; grid-template-columns:1fr 1fr; gap:10px;
-      margin-top:12px;
-    }
+    .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; }
     .tile{
-      padding:12px;
-      border-radius:16px;
+      padding:12px; border-radius:16px;
       border:1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.03);
     }
     .tile .t{ font-size:12px; color: rgba(255,255,255,.70); font-weight:750; }
     .tile .v{ font-size:18px; font-weight:900; margin-top:6px; letter-spacing:-.3px; }
     .spark{
-      height:44px;
-      margin-top:10px;
-      border-radius:12px;
+      height:44px; margin-top:10px; border-radius:12px;
       border:1px solid rgba(255,255,255,.08);
       background:
         linear-gradient(90deg, rgba(124,92,255,0), rgba(124,92,255,.35), rgba(255,255,255,.10), rgba(46,233,162,.22), rgba(124,92,255,0)),
@@ -189,25 +165,13 @@
     }
 
     /* Sections */
-    section{ margin-top:56px; }
-    .title{
-      display:flex; align-items:flex-end; justify-content:space-between; gap:18px;
-      margin-bottom:16px;
-    }
-    .title h2{
-      margin:0;
-      font-size: 26px;
-      letter-spacing:-.4px;
-    }
-    .title p{
-      margin:0;
-      color: var(--muted);
-      max-width: 80ch;
-    }
+    section{ margin-top:58px; }
+    .title{ display:flex; align-items:flex-end; justify-content:space-between; gap:18px; margin-bottom:16px; }
+    .title h2{ margin:0; font-size: 26px; letter-spacing:-.4px; }
+    .title p{ margin:0; color: var(--muted); max-width: 80ch; }
+
     .grid3{ display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; }
-    .feat{
-      padding:18px;
-    }
+    .feat{ padding:18px; }
     .feat .icon{
       width:40px; height:40px; border-radius:16px;
       display:flex; align-items:center; justify-content:center;
@@ -219,24 +183,197 @@
     .feat h3{ margin:0 0 6px; font-size:16px; }
     .feat p{ margin:0; color:var(--muted); font-size:14px; }
 
-    .how{
-      padding:18px;
-    }
-    .steps{ display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; }
-    .step{
-      padding:14px;
-      border-radius:16px;
+    /* Tabs */
+    .tabsWrap{ padding:18px; }
+    .tabs{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+    .tabBtn{
+      padding:10px 12px;
+      border-radius:14px;
       border:1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.03);
-      display:flex; gap:12px;
+      color: rgba(255,255,255,.78);
+      font-weight:780;
+      cursor:pointer;
+      user-select:none;
     }
-    .num{
-      width:30px; height:30px; border-radius:12px;
+    .tabBtn[aria-selected="true"]{
+      border-color: rgba(124,92,255,.35);
+      background: rgba(124,92,255,.12);
+      color: rgba(255,255,255,.92);
+    }
+    .tabPanel{ display:none; }
+    .tabPanel.active{ display:grid; }
+    .tabGrid{ grid-template-columns: 1.05fr .95fr; gap:14px; align-items:start; }
+    .tabCopy{ padding:16px; }
+    .tabCopy h3{ margin:0 0 6px; font-size:18px; letter-spacing:-.2px; }
+    .tabCopy p{ margin:0; color:var(--muted); }
+    .bullets{ margin:14px 0 0; padding:0; list-style:none; color:var(--muted); }
+    .bullets li{ display:flex; gap:10px; margin:10px 0; }
+    .check{
+      width:18px; height:18px; border-radius:7px;
+      background: rgba(46,233,162,.12);
+      border:1px solid rgba(46,233,162,.28);
       display:flex; align-items:center; justify-content:center;
-      border:1px solid rgba(124,92,255,.35);
-      background: rgba(124,92,255,.14);
+      font-weight:900;
+      color: rgba(255,255,255,.90);
+      flex:0 0 auto;
+      transform: translateY(1px);
+    }
+    .tabMock{ padding:16px; }
+    .miniMock{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      padding:14px;
+    }
+    .miniRow{ display:flex; justify-content:space-between; gap:10px; font-weight:820; color: rgba(255,255,255,.86); }
+    .miniSub{ color: rgba(255,255,255,.58); font-size:12px; margin-top:4px; }
+    .miniKpi{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; }
+    .miniKpi .k{ padding:10px; border-radius:14px; border:1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.03); }
+    .miniKpi .k .t{ font-size:12px; color: rgba(255,255,255,.62); font-weight:750;}
+    .miniKpi .k .v{ margin-top:6px; font-size:16px; font-weight:920; letter-spacing:-.2px;}
+
+    /* Screens gallery */
+    .gallery{ display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; }
+    .shot{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      padding:14px;
+      cursor:pointer;
+      transition: transform .12s ease;
+      position:relative;
+      overflow:hidden;
+      min-height: 170px;
+    }
+    .shot:hover{ transform: translateY(-2px); }
+    .shot b{ display:block; margin-top:8px; }
+    .shot span{ display:block; color: var(--muted); font-size:12px; margin-top:4px; }
+    .shot:before{
+      content:"";
+      position:absolute; inset:-60% -40%;
+      background:
+        radial-gradient(circle at 30% 40%, rgba(124,92,255,.18), transparent 45%),
+        radial-gradient(circle at 70% 60%, rgba(46,233,162,.10), transparent 45%);
+      transform: rotate(10deg);
+      opacity:.75;
+    }
+
+    /* Lightbox */
+    .lightbox{
+      position:fixed; inset:0; z-index:50;
+      background: rgba(0,0,0,.70);
+      display:none;
+      align-items:center; justify-content:center;
+      padding:22px;
+      backdrop-filter: blur(10px);
+    }
+    .lightbox.open{ display:flex; }
+    .lightboxCard{
+      width: min(980px, 100%);
+      border-radius: 20px;
+      border:1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      box-shadow: 0 30px 90px rgba(0,0,0,.65);
+      overflow:hidden;
+    }
+    .lightboxTop{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding:14px 14px 10px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      color: rgba(255,255,255,.86);
+      font-weight:820;
+    }
+    .x{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      border-radius: 12px;
+      padding:8px 10px;
+      cursor:pointer;
       font-weight:900;
     }
+    .lightboxBody{
+      padding:16px;
+      color: var(--muted);
+      min-height: 260px;
+    }
+    .placeholderImg{
+      height: 360px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(600px 260px at 30% 20%, rgba(124,92,255,.22), transparent 55%),
+        radial-gradient(520px 240px at 70% 60%, rgba(46,233,162,.12), transparent 55%),
+        rgba(255,255,255,.02);
+    }
+    .note{ font-size:12px; color: rgba(255,255,255,.55); margin-top:10px; }
+
+    /* Use cases */
+    .cases{ display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; }
+    .case{ padding:18px; }
+    .case h3{ margin:0 0 6px; font-size:16px; }
+    .case p{ margin:0; color:var(--muted); font-size:14px; }
+
+    /* Roadmap */
+    .road{ padding:18px; }
+    .roadGrid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; }
+    .col{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      padding:14px;
+    }
+    .col .h{ font-weight:900; letter-spacing:-.2px; }
+    .col ul{ margin:10px 0 0; padding-left:18px; color: var(--muted); }
+    .col li{ margin:8px 0; }
+
+    /* Pricing */
+    .pricing{ padding:18px; }
+    .toggleRow{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
+    .toggle{
+      display:flex; gap:8px; align-items:center;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      padding:6px;
+      border-radius: 999px;
+    }
+    .toggle button{
+      border:none;
+      background: transparent;
+      color: rgba(255,255,255,.70);
+      padding:8px 12px;
+      border-radius: 999px;
+      font-weight:850;
+      cursor:pointer;
+    }
+    .toggle button.active{
+      background: rgba(124,92,255,.14);
+      color: rgba(255,255,255,.92);
+      border:1px solid rgba(124,92,255,.28);
+    }
+    .priceGrid{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+    .plan{ padding:18px; }
+    .plan .tag{
+      display:inline-flex;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      color: rgba(255,255,255,.70);
+      font-weight:850;
+      font-size:12px;
+    }
+    .plan .amount{
+      font-size: 34px;
+      font-weight: 950;
+      letter-spacing: -.7px;
+      margin:10px 0 0;
+    }
+    .plan .sub{ margin:4px 0 0; color: var(--muted); }
+    .list{ margin:14px 0 0; padding:0; list-style:none; color: var(--muted); }
+    .list li{ display:flex; gap:10px; margin:10px 0; }
+
+    /* FAQ */
     details{
       border:1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.03);
@@ -246,6 +383,24 @@
     details + details{ margin-top:10px; }
     summary{ cursor:pointer; font-weight:850; }
     details p{ color:var(--muted); margin:10px 0 0; }
+
+    /* Waitlist */
+    .wait{ padding:18px; }
+    .formRow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+    input{
+      flex: 1 1 260px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      outline:none;
+    }
+    input::placeholder{ color: rgba(255,255,255,.45); }
+
+    /* subtle reveal */
+    .reveal{ opacity:0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease; }
+    .reveal.in{ opacity:1; transform: translateY(0); }
 
     footer{
       margin-top:64px;
@@ -261,10 +416,15 @@
       .links{ display:none; }
       .hero{ grid-template-columns: 1fr; }
       .grid3{ grid-template-columns: 1fr; }
-      .steps{ grid-template-columns: 1fr; }
+      .tabGrid{ grid-template-columns: 1fr; }
+      .gallery{ grid-template-columns: 1fr; }
+      .cases{ grid-template-columns: 1fr; }
+      .roadGrid{ grid-template-columns: 1fr; }
+      .priceGrid{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <header class="nav">
@@ -274,29 +434,29 @@
       </a>
       <nav class="links" aria-label="Primary">
         <a href="#features">Features</a>
-        <a href="#social">Social</a>
-        <a href="#staking">Staking</a>
-        <a href="#how">How it works</a>
+        <a href="#deep">Deep dive</a>
+        <a href="#screens">Screens</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
       </nav>
       <a class="btn primary" href="TESTFLIGHT_LINK" target="_blank" rel="noreferrer">Join TestFlight</a>
     </header>
 
     <main id="top">
-      <div class="hero">
+      <div class="hero reveal">
         <div>
           <div class="kicker"><span class="dot"></span> Premium poker performance — built for live cash</div>
           <h1>Track your sessions.<br/>Own your edge.</h1>
           <p class="lead">
-            MyGrind combines clean session tracking, multi-currency stats, a social feed, and staking deals —
+            MyGrind combines clean session tracking, multi-currency stats, social feed, and staking deals —
             designed with a luxury-minimal interface that stays out of your way.
           </p>
-
           <div class="cta">
             <a class="btn primary" href="TESTFLIGHT_LINK" target="_blank" rel="noreferrer">Download (TestFlight)</a>
+            <a class="btn ghost" href="#waitlist">Join waitlist</a>
             <a class="btn" href="mailto:sorin.martin94@gmail.com?subject=MyGrind%20Support">Contact</a>
           </div>
-
           <p class="fineprint">
             No gambling. No betting. MyGrind only records and analyzes sessions played elsewhere.
           </p>
@@ -320,13 +480,13 @@
                 <div class="spark"></div>
               </div>
               <div class="tile">
-                <div class="t">Buy-ins</div>
-                <div class="v">3</div>
+                <div class="t">Social</div>
+                <div class="v">+12 likes</div>
                 <div class="spark"></div>
               </div>
               <div class="tile">
-                <div class="t">Hours</div>
-                <div class="v">06:15</div>
+                <div class="t">Deal</div>
+                <div class="v">Active</div>
                 <div class="spark"></div>
               </div>
             </div>
@@ -337,7 +497,7 @@
         </div>
       </div>
 
-      <section id="features">
+      <section id="features" class="reveal">
         <div class="title">
           <h2>Core features</h2>
           <p>Minimal inputs. Maximum clarity. Built around how live players actually track.</p>
@@ -350,109 +510,260 @@
             <p>Timer, stakes, room, NLHE/PLO/PLO5, buy-ins + rebuys, cashout, tags and private notes.</p>
           </div>
           <div class="card feat">
-            <div class="icon">€</div>
-            <h3>Multi-currency stats</h3>
-            <p>Log sessions in USD/EUR/RON. Set a base currency and view unified bankroll and results.</p>
-          </div>
-          <div class="card feat">
-            <div class="icon">📈</div>
-            <h3>Recap & variance</h3>
-            <p>Period summaries and variance insights to understand swings and build discipline.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="social">
-        <div class="title">
-          <h2>Social, done right</h2>
-          <p>A clean feed built for poker: share sessions and posts, get notifications, and control privacy.</p>
-        </div>
-
-        <div class="grid3">
-          <div class="card feat">
             <div class="icon">📰</div>
-            <h3>Feed</h3>
-            <p>Share sessions and posts with a simple, premium layout that keeps the focus on results.</p>
+            <h3>Social feed</h3>
+            <p>Share sessions and posts, get notifications, and control privacy with a clean, premium feed.</p>
           </div>
-          <div class="card feat">
-            <div class="icon">🔔</div>
-            <h3>Notifications</h3>
-            <p>Likes and updates delivered cleanly — stay connected without noise.</p>
-          </div>
-          <div class="card feat">
-            <div class="icon">🔒</div>
-            <h3>Privacy controls</h3>
-            <p>Public or private profile. Keep private notes private — share only what you choose.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="staking">
-        <div class="title">
-          <h2>Staking & deals</h2>
-          <p>Advanced tools for backed players: track deal sessions, maintain a ledger, keep everyone aligned.</p>
-        </div>
-
-        <div class="grid3">
           <div class="card feat">
             <div class="icon">🤝</div>
-            <h3>Deals</h3>
-            <p>Start sessions linked to a deal and keep deal stats consistent over time.</p>
-          </div>
-          <div class="card feat">
-            <div class="icon">📒</div>
-            <h3>Ledger</h3>
-            <p>Clean tracking for deal entries — designed for clarity and accountability.</p>
-          </div>
-          <div class="card feat">
-            <div class="icon">🧑‍💼</div>
-            <h3>Manager updates</h3>
-            <p>Session start/end events and outcomes can be shared for smooth communication.</p>
+            <h3>Staking deals</h3>
+            <p>Deal sessions, ledger tracking, and manager updates — designed for accountability.</p>
           </div>
         </div>
       </section>
 
-      <section id="how">
+      <section id="deep" class="reveal">
         <div class="title">
-          <h2>How it works</h2>
-          <p>Log sessions in seconds. Review results anytime.</p>
+          <h2>Deep dive</h2>
+          <p>Four pillars: Sessions, Social, Staking, Analytics — everything in one workspace.</p>
         </div>
 
-        <div class="card how">
-          <div class="steps">
-            <div class="step">
-              <div class="num">1</div>
-              <div>
-                <div style="font-weight:850">Create a session</div>
-                <div style="color:var(--muted)">Game, stakes, room, currency, tags.</div>
+        <div class="card tabsWrap">
+          <div class="tabs" role="tablist" aria-label="Feature deep dive">
+            <div class="tabBtn" role="tab" aria-selected="true" data-tab="sessions">Sessions</div>
+            <div class="tabBtn" role="tab" aria-selected="false" data-tab="social">Social</div>
+            <div class="tabBtn" role="tab" aria-selected="false" data-tab="staking">Staking</div>
+            <div class="tabBtn" role="tab" aria-selected="false" data-tab="analytics">Analytics</div>
+          </div>
+
+          <div class="tabPanel active tabGrid" data-panel="sessions">
+            <div class="card tabCopy">
+              <h3>Session tracking that stays out of your way</h3>
+              <p>Start fast, track cleanly, end with confidence. Designed for live cash flow.</p>
+              <ul class="bullets">
+                <li><span class="check">✓</span>Live timer + clean end-of-session summary</li>
+                <li><span class="check">✓</span>Buy-ins, rebuys, cashout (with undo)</li>
+                <li><span class="check">✓</span>Stakes, rooms, tags, private notes</li>
+                <li><span class="check">✓</span>Performance ratings (tilt/focus/decisions)</li>
+              </ul>
+            </div>
+            <div class="card tabMock">
+              <div class="miniMock">
+                <div class="miniRow"><div>Session</div><div class="pill">PLO • 5/10</div></div>
+                <div class="miniSub">Room: Wynn • Duration: 06:15 • Currency: USD</div>
+                <div class="miniKpi">
+                  <div class="k"><div class="t">Buy-in</div><div class="v">$2,000</div></div>
+                  <div class="k"><div class="t">Cashout</div><div class="v">$2,620</div></div>
+                  <div class="k"><div class="t">Profit</div><div class="v">+$620</div></div>
+                  <div class="k"><div class="t">Winrate</div><div class="v">$99/hr</div></div>
+                </div>
               </div>
             </div>
-            <div class="step">
-              <div class="num">2</div>
-              <div>
-                <div style="font-weight:850">Track buy-ins & cashout</div>
-                <div style="color:var(--muted)">Add rebuys as you play. End cleanly.</div>
+          </div>
+
+          <div class="tabPanel tabGrid" data-panel="social">
+            <div class="card tabCopy">
+              <h3>Social feed built for poker</h3>
+              <p>Share what matters. Keep it premium. Control your privacy.</p>
+              <ul class="bullets">
+                <li><span class="check">✓</span>Post sessions & milestones</li>
+                <li><span class="check">✓</span>Likes + notifications</li>
+                <li><span class="check">✓</span>Public/private profiles</li>
+                <li><span class="check">✓</span>Shareable cards (PNG)</li>
+              </ul>
+            </div>
+            <div class="card tabMock">
+              <div class="miniMock">
+                <div class="miniRow"><div>Feed</div><div class="pill">Public</div></div>
+                <div class="miniSub">“+€420 in 2/5 — stayed calm in a deep spot.”</div>
+                <div class="miniKpi">
+                  <div class="k"><div class="t">Likes</div><div class="v">24</div></div>
+                  <div class="k"><div class="t">Comments</div><div class="v">6</div></div>
+                  <div class="k"><div class="t">Shares</div><div class="v">3</div></div>
+                  <div class="k"><div class="t">Reach</div><div class="v">1.2k</div></div>
+                </div>
               </div>
             </div>
-            <div class="step">
-              <div class="num">3</div>
-              <div>
-                <div style="font-weight:850">Rate + notes (optional)</div>
-                <div style="color:var(--muted)">Quality and mindset markers for review.</div>
+          </div>
+
+          <div class="tabPanel tabGrid" data-panel="staking">
+            <div class="card tabCopy">
+              <h3>Deals, sessions, ledger — clean accountability</h3>
+              <p>For backed players and managers: transparency without spreadsheets.</p>
+              <ul class="bullets">
+                <li><span class="check">✓</span>Deal-linked sessions (live/ended)</li>
+                <li><span class="check">✓</span>Ledger entries + deal stats</li>
+                <li><span class="check">✓</span>Manager updates on session start/end</li>
+                <li><span class="check">✓</span>Ownership percentage support</li>
+              </ul>
+            </div>
+            <div class="card tabMock">
+              <div class="miniMock">
+                <div class="miniRow"><div>Deal</div><div class="pill">Active</div></div>
+                <div class="miniSub">Manager notified • Ledger consistent • FX supported</div>
+                <div class="miniKpi">
+                  <div class="k"><div class="t">Sessions</div><div class="v">18</div></div>
+                  <div class="k"><div class="t">Makeup</div><div class="v">$1,200</div></div>
+                  <div class="k"><div class="t">Net</div><div class="v">+$3,950</div></div>
+                  <div class="k"><div class="t">Stake</div><div class="v">50%</div></div>
+                </div>
               </div>
             </div>
-            <div class="step">
-              <div class="num">4</div>
-              <div>
-                <div style="font-weight:850">See the truth in stats</div>
-                <div style="color:var(--muted)">Recap, bankroll, winrate, variance.</div>
+          </div>
+
+          <div class="tabPanel tabGrid" data-panel="analytics">
+            <div class="card tabCopy">
+              <h3>Analytics that tell the truth</h3>
+              <p>Multi-currency stats unified by a base currency. Filters for real review.</p>
+              <ul class="bullets">
+                <li><span class="check">✓</span>Base currency aggregation (USD/EUR/RON)</li>
+                <li><span class="check">✓</span>1W / 1M / YTD / Custom filters</li>
+                <li><span class="check">✓</span>Recap & variance insights</li>
+                <li><span class="check">✓</span>Tag-based review</li>
+              </ul>
+            </div>
+            <div class="card tabMock">
+              <div class="miniMock">
+                <div class="miniRow"><div>Recap</div><div class="pill">YTD</div></div>
+                <div class="miniSub">Unified in base currency • filtered by stakes/rooms/tags</div>
+                <div class="miniKpi">
+                  <div class="k"><div class="t">Profit</div><div class="v">+$12,430</div></div>
+                  <div class="k"><div class="t">Hours</div><div class="v">312</div></div>
+                  <div class="k"><div class="t">Winrate</div><div class="v">$39.8/hr</div></div>
+                  <div class="k"><div class="t">Best stake</div><div class="v">5/10</div></div>
+                </div>
               </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="screens" class="reveal">
+        <div class="title">
+          <h2>Screens</h2>
+          <p>Placeholders for now. Swap with real app screenshots when ready.</p>
+        </div>
+
+        <div class="gallery">
+          <div class="shot" data-title="Session tracking" data-desc="Start/end sessions, buy-ins, rebuys, cashout, notes.">
+            <b>Session tracking</b><span>Fast logging with live timer</span>
+          </div>
+          <div class="shot" data-title="Social feed" data-desc="Share sessions & posts, likes, notifications, privacy control.">
+            <b>Social feed</b><span>Premium feed for poker</span>
+          </div>
+          <div class="shot" data-title="Staking deals" data-desc="Deal sessions, ledger, manager updates. Clean accountability.">
+            <b>Staking deals</b><span>Built-in deal workflow</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="roadmap" class="reveal">
+        <div class="title">
+          <h2>Roadmap</h2>
+          <p>Clear direction for beta → v1. Keep it lean, ship fast.</p>
+        </div>
+
+        <div class="card road">
+          <div class="roadGrid">
+            <div class="col">
+              <div class="h">Now (Beta)</div>
+              <ul>
+                <li>Core session tracking</li>
+                <li>Multi-currency + base currency</li>
+                <li>Social + notifications</li>
+                <li>Staking deals & ledger</li>
+              </ul>
+            </div>
+            <div class="col">
+              <div class="h">Next</div>
+              <ul>
+                <li>Exports (CSV/PDF)</li>
+                <li>Advanced reports & charts</li>
+                <li>More filters & comparisons</li>
+                <li>Better share cards</li>
+              </ul>
+            </div>
+            <div class="col">
+              <div class="h">Later</div>
+              <ul>
+                <li>Coaching tools</li>
+                <li>Goals & challenges expansion</li>
+                <li>Team/Stable dashboards</li>
+                <li>More currencies & live FX</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="faq">
+      <section id="pricing" class="reveal">
+        <div class="title">
+          <h2>Pricing</h2>
+          <p>Beta is free on TestFlight. Pro will unlock advanced reporting and exports.</p>
+        </div>
+
+        <div class="card pricing">
+          <div class="toggleRow">
+            <div style="font-weight:900; color: rgba(255,255,255,.86)">Planned pricing</div>
+            <div class="toggle" aria-label="Billing toggle">
+              <button class="active" data-billing="monthly" type="button">Monthly</button>
+              <button data-billing="yearly" type="button">Yearly</button>
+            </div>
+          </div>
+
+          <div class="priceGrid">
+            <div class="card plan">
+              <span class="tag">Beta</span>
+              <div class="amount">€0</div>
+              <div class="sub">Free during TestFlight</div>
+              <ul class="list">
+                <li><span class="check">✓</span>Unlimited sessions</li>
+                <li><span class="check">✓</span>Multi-currency stats</li>
+                <li><span class="check">✓</span>Social + deals access</li>
+              </ul>
+              <div style="margin-top:14px;">
+                <a class="btn primary" href="TESTFLIGHT_LINK" target="_blank" rel="noreferrer">Join TestFlight</a>
+              </div>
+            </div>
+
+            <div class="card plan" id="proPlan">
+              <span class="tag" style="border-color: rgba(124,92,255,.28); background: rgba(124,92,255,.10);">Pro (Coming)</span>
+              <div class="amount" id="proPrice">€9.99</div>
+              <div class="sub" id="proSub">per month</div>
+              <ul class="list">
+                <li><span class="check">✓</span>Advanced analytics & reports</li>
+                <li><span class="check">✓</span>Exports (CSV/PDF)</li>
+                <li><span class="check">✓</span>Deeper variance & comparisons</li>
+              </ul>
+              <div style="margin-top:14px;">
+                <a class="btn" href="#waitlist">Join waitlist</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="note">Pricing is provisional and may change before App Store release.</div>
+        </div>
+      </section>
+
+      <section id="waitlist" class="reveal">
+        <div class="title">
+          <h2>Waitlist</h2>
+          <p>Get notified when Pro launches and when new features ship.</p>
+        </div>
+
+        <div class="card wait">
+          <!-- simplest: mailto. If you want real capture, I can plug Formspree / Buttondown / ConvertKit -->
+          <div style="color: rgba(255,255,255,.82); font-weight:900;">Join via email</div>
+          <div class="formRow">
+            <input id="email" type="email" placeholder="you@email.com" />
+            <button class="btn primary" id="joinBtn" type="button">Join</button>
+          </div>
+          <div class="note">No spam. One email per major update.</div>
+        </div>
+      </section>
+
+      <section id="faq" class="reveal">
         <div class="title">
           <h2>FAQ</h2>
           <p>Quick answers for testers and early users.</p>
@@ -484,15 +795,100 @@
           <span>© <span id="y"></span> MyGrind</span>
         </div>
         <div class="smalllinks">
-          <a href="https://sorinmartin.github.io/mygrind-privacy/" target="_blank" rel="noreferrer">Privacy Policy</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="changelog.html">Changelog</a>
           <a href="mailto:sorin.martin94@gmail.com?subject=MyGrind%20Support">Support</a>
         </div>
       </footer>
     </main>
   </div>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightboxCard" role="dialog" aria-modal="true" aria-label="Screenshot preview">
+      <div class="lightboxTop">
+        <div id="lbTitle">Title</div>
+        <div class="x" id="lbClose" aria-label="Close">✕</div>
+      </div>
+      <div class="lightboxBody">
+        <div class="placeholderImg"></div>
+        <div class="note" id="lbDesc">Description</div>
+      </div>
+    </div>
+  </div>
+
   <script>
+    // year
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // tabs
+    const tabButtons = Array.from(document.querySelectorAll('.tabBtn'));
+    const panels = Array.from(document.querySelectorAll('.tabPanel'));
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => b.setAttribute('aria-selected', 'false'));
+        btn.setAttribute('aria-selected', 'true');
+        const key = btn.dataset.tab;
+        panels.forEach(p => p.classList.toggle('active', p.dataset.panel === key));
+      });
+    });
+
+    // gallery lightbox
+    const lb = document.getElementById('lightbox');
+    const lbTitle = document.getElementById('lbTitle');
+    const lbDesc = document.getElementById('lbDesc');
+    const lbClose = document.getElementById('lbClose');
+
+    function openLb(title, desc){
+      lbTitle.textContent = title;
+      lbDesc.textContent = desc;
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+    }
+    function closeLb(){
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+    }
+
+    document.querySelectorAll('.shot').forEach(s => {
+      s.addEventListener('click', () => openLb(s.dataset.title, s.dataset.desc));
+    });
+    lbClose.addEventListener('click', closeLb);
+    lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
+
+    // pricing toggle
+    const billingBtns = Array.from(document.querySelectorAll('.toggle button'));
+    const proPrice = document.getElementById('proPrice');
+    const proSub = document.getElementById('proSub');
+
+    billingBtns.forEach(b => b.addEventListener('click', () => {
+      billingBtns.forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      const mode = b.dataset.billing;
+      if(mode === 'yearly'){
+        proPrice.textContent = '€99';
+        proSub.textContent = 'per year (2 months free)';
+      } else {
+        proPrice.textContent = '€9.99';
+        proSub.textContent = 'per month';
+      }
+    }));
+
+    // waitlist mailto
+    document.getElementById('joinBtn').addEventListener('click', () => {
+      const email = (document.getElementById('email').value || '').trim();
+      const subject = encodeURIComponent('MyGrind Waitlist');
+      const body = encodeURIComponent('Please add me to the MyGrind waitlist.\\n\\nEmail: ' + email);
+      window.location.href = 'mailto:sorin.martin94@gmail.com?subject=' + subject + '&body=' + body;
+    });
   </script>
 </body>
 </html>
